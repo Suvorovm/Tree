@@ -20,7 +20,7 @@ namespace Tree
         {
             if (Head == null)
             {
-                Head = new Element();
+                Head = new Element();//создаем корень
                 AddSymbols(s.ToCharArray());
              
             }
