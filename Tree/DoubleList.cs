@@ -27,7 +27,7 @@ namespace Tree
             }
         }
       //метод добавления, если уже известно, что внизу нет ничего, и не найден символ 
-        public void AddCascadElements(int index,Element element,char[] arrayOfSymbols)
+        private void AddCascadElements(int index,Element element,char[] arrayOfSymbols)
         {
             Debug.WriteLine("Метод добавления каскадом");
             var time = element;
@@ -48,7 +48,7 @@ namespace Tree
             time.Down = temprory;
         }
         //добавление слов
-        public void AddSymbols(char[] arrayOfSymbols)
+        private void AddSymbols(char[] arrayOfSymbols)
         {
             Debug.WriteLine("AddSymbols");
             var temrory = Head;
@@ -83,7 +83,7 @@ namespace Tree
             return temrory;
         }
         //поиск эллемента справа
-         public bool SerchSymbolRight(Element Upster,char symbol)
+         private bool SerchSymbolRight(Element Upster,char symbol)
         {
             Debug.WriteLine("SerchSymbolRight");
             while (Upster != null)

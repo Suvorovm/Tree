@@ -8,7 +8,7 @@ namespace TestProj
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestmetodAdd()
         {
             DoubleList list = new DoubleList();
             string str = "123";
