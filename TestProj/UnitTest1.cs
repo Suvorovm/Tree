@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tree;
 
@@ -22,7 +23,17 @@ namespace TestProj
         [TestMethod]
         public void TestMetodSearch()
         {
-
+            DoubleList list = new DoubleList();
+            string str = "123";
+            list.AddWord(str);
+            if (list.SerchWord(str))
+            {
+                Debug.WriteLine("true");
+            }
+            else
+            {
+                Debug.WriteLine("false");
+            }
         }
     }
 }

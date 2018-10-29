@@ -12,7 +12,7 @@ namespace Tree
       // Поиск слова
         public bool SerchWord(string s)
         {
-            SerchSymbolsForResult(s.ToCharArray());
+            return  SerchSymbolsForResult(s.ToCharArray());
         }
 
         private bool SerchSymbolsForResult(char[] array)
@@ -20,8 +20,14 @@ namespace Tree
             var temrory = Head;
             for (int i = 0; i < array.Length; i++)
             {
-
+               if(!SerchSymbolRight(temrory, array[i]))
+                {
+                    return false;
+                }
+                temrory = GetReferencOfElement(temrory, array[i]);
+                temrory = temrory.Down;
             }
+            return true;
         }
         //преобразование входного слова в массив char
         public void AddWord(string s)
