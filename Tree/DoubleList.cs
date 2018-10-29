@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Tree
 {
@@ -29,7 +26,7 @@ namespace Tree
                 AddSymbols(s.ToCharArray());
             }
         }
-      //метод добавления, если уже известно, что внизу нет ничего
+      //метод добавления, если уже известно, что внизу нет ничего, и не найден символ 
         public void AddCascadElements(int index,Element element,char[] arrayOfSymbols)
         {
             Debug.WriteLine("Метод добавления каскадом");
@@ -57,7 +54,7 @@ namespace Tree
             var temrory = Head;
             for (int i = 0; i < arrayOfSymbols.Length; i++)
             {             
-                if (!SerchSymbolRight(Head, arrayOfSymbols[i]))
+                if (!SerchSymbolRight(temrory, arrayOfSymbols[i]))
                 {
                     temrory =  AddSymbolRightEnd(temrory, arrayOfSymbols[i]);
                     AddCascadElements(i+1, temrory, arrayOfSymbols);
@@ -65,6 +62,7 @@ namespace Tree
                 }
                 {
                     temrory = GetReferencOfElement(temrory, arrayOfSymbols[i]);
+                    temrory = temrory.Down;
                 }               
             } 
         }
@@ -88,7 +86,7 @@ namespace Tree
          public bool SerchSymbolRight(Element Upster,char symbol)
         {
             Debug.WriteLine("SerchSymbolRight");
-            while (Upster.Right != null)
+            while (Upster != null)
             {
                 if(Upster.Data == symbol)
                 {
@@ -101,22 +99,14 @@ namespace Tree
             }
             return false;
         }
-        //созданеи элемента снизу
-        public void CreatDownElement(Element element,char symbol)
-        {
-            Debug.WriteLine("CreatDownElement");
-            var temprory = new Element();
-            element.Down = temprory;
-            temprory.Data = symbol;
-            temprory.Right = null;
-            temprory.Down = null;
-        }
-
+      
+        // возвращение эллемента справва, который уже был найден
+        //для перехода вниз
          private Element GetReferencOfElement(Element Upster, char symbol)
         {
             Debug.WriteLine("GetReferencOfElement");
             var temprory = Upster;
-            while (temprory.Data != symbol)
+            while (temprory.Data != symbol)//возможно  символ на null
             {
                 temprory = temprory.Right;
             }

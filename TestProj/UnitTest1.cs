@@ -14,6 +14,8 @@ namespace TestProj
             string str = "123";
             list.AddWord(str);
             list.AddWord("321");
+            list.AddWord("325");
+            list.AddWord("321");
             str = "555";
            
         }
