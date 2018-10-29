@@ -22,8 +22,24 @@ namespace Tree
         {
             string str = textBox1.Text;
             list.AddWord(str);
-            int count = listBoxData.Items.Count;
-            listBoxData.Items.Insert(count, str);
+
+            listView1.Items.Add(str);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string str = textBox2.Text;
+            if (list.SerchWord(str))
+            {
+                label4.Text = "Найдено";
+                listView1.Items[0].Focused = true;
+                listView1.Items[0].Selected = true;
+             
+            }
+            else
+            {
+                label4.Text = "Не найдено";
+            }
         }
     }
 }

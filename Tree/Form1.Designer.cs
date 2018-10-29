@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxData = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,16 +35,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
-            // 
-            // listBoxData
-            // 
-            this.listBoxData.FormattingEnabled = true;
-            this.listBoxData.ItemHeight = 16;
-            this.listBoxData.Location = new System.Drawing.Point(38, 251);
-            this.listBoxData.Name = "listBoxData";
-            this.listBoxData.Size = new System.Drawing.Size(213, 116);
-            this.listBoxData.TabIndex = 0;
             // 
             // label1
             // 
@@ -112,12 +104,34 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Найти слово";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(614, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 25);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Нет";
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(38, 242);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(194, 155);
+            this.listView1.TabIndex = 9;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 445);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
@@ -125,7 +139,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBoxData);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -134,8 +147,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBoxData;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
@@ -143,6 +154,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 
