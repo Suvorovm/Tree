@@ -1,6 +1,4 @@
-﻿
-using System.Diagnostics;
-
+﻿using System.Diagnostics;
 
 namespace Tree
 {
@@ -10,16 +8,28 @@ namespace Tree
         {
             return Head.Data.ToString();
         }
-        public Element Head { get; set; }//      
-      
+        private Element Head { get; set; }//      
+      // Поиск слова
+        public bool SerchWord(string s)
+        {
+            SerchSymbolsForResult(s.ToCharArray());
+        }
+
+        private bool SerchSymbolsForResult(char[] array)
+        {
+            var temrory = Head;
+            for (int i = 0; i < array.Length; i++)
+            {
+
+            }
+        }
         //преобразование входного слова в массив char
         public void AddWord(string s)
         {
             if (Head == null)
             {
                 Head = new Element();//создаем корень
-                AddSymbols(s.ToCharArray());
-             
+                AddSymbols(s.ToCharArray());             
             }
             else
             {
@@ -70,7 +80,6 @@ namespace Tree
         private Element AddSymbolRightEnd(Element element,char symbol)
         {
             Debug.WriteLine("AddSymbolRightEnd");
-
             Element temrory = new Element();
             while(element.Right != null)
             {

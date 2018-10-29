@@ -19,5 +19,10 @@ namespace TestProj
             str = "555";
            
         }
+        [TestMethod]
+        public void TestMetodSearch()
+        {
+
+        }
     }
 }
