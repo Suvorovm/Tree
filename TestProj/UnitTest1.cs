@@ -26,14 +26,16 @@ namespace TestProj
             DoubleList list = new DoubleList();
             string str = "123";
             list.AddWord(str);
+            list.AddWord(str);
             if (list.SerchWord(str))
             {
-                Debug.WriteLine("true");
+                Debug.WriteLine("da");
             }
             else
             {
-                Debug.WriteLine("false");
+                Debug.WriteLine("net");
             }
+            str = "123";
         }
     }
 }
