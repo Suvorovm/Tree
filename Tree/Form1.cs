@@ -21,8 +21,17 @@ namespace Tree
         private void button1_Click(object sender, EventArgs e)
         {
             string str = textBox1.Text;
-            list.AddWord(str);
-            listBox1.Items.Add(str);
+            if (list.SerchWord(str))
+            {
+                list.AddWord(str);
+                label4.Text = "Эллемент уже существует";
+            }
+            else
+            {
+                list.AddWord(str);
+                listBox1.Items.Add(str);
+            }
+          
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -31,8 +40,10 @@ namespace Tree
             if (list.SerchWord(str))
             {
                 label4.Text = "Найдено";
-                 int numer =  listBox1.FindStringExact(str);
+                //Метод FindString not case-sensitive.
+                int numer =  listBox1.FindStringExact(str);
                 listBox1.SetSelected(numer, true);
+             
 
             }
             else
