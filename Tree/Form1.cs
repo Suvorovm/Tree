@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Tree
@@ -18,6 +12,24 @@ namespace Tree
             InitializeComponent();
         }
 
+        private void SearchNExt(string value)
+        {
+            int num = -1;
+            string valueFounded;
+            while (num+1< listBox1.Items.Count) { 
+
+            num = listBox1.FindStringExact(value, ++num);
+            valueFounded = listBox1.Items[num].ToString();
+            if (String.Compare(valueFounded, value, StringComparison.Ordinal) == 0)
+            {
+                listBox1.SetSelected(num, true);
+            }
+              
+        }   
+            
+            Debug.WriteLine("Exit");
+        }
+        
         private void button1_Click(object sender, EventArgs e)
         {
             string str = textBox1.Text;
@@ -40,10 +52,8 @@ namespace Tree
             if (list.SerchWord(str))
             {
                 label4.Text = "Найдено";
-                //Метод FindString not case-sensitive.
-                int numer =  listBox1.FindStringExact(str);
-                listBox1.SetSelected(numer, true);
-             
+                //Метод FindStringExact not case-sensitive. Не поддерживает регистре.              
+                SearchNExt(str);
 
             }
             else

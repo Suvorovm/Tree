@@ -8,8 +8,8 @@ namespace Tree
 {
   public  class Element
     {
-      public Char Data { get; set; }
-       public Element Right { get; set; }
+        public Char Data { get; set; }
+        public Element Right { get; set; }
         public Element Down { get; set; }
     }
 }
