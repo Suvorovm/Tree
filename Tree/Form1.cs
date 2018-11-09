@@ -14,20 +14,22 @@ namespace Tree
 
         private void SearchNExt(string value)
         {
-            int num = -1;
+            int num = 0;
             string valueFounded;
-            while (num+1< listBox1.Items.Count) { 
-
-            num = listBox1.FindStringExact(value, ++num);
-            valueFounded = listBox1.Items[num].ToString();
-            if (String.Compare(valueFounded, value, StringComparison.Ordinal) == 0)
+            do
             {
-                listBox1.SetSelected(num, true);
-            }
-              
-        }   
-            
-       
+                num = listBox1.FindStringExact(value, num);
+                valueFounded = listBox1.Items[num].ToString();
+                if (String.Compare(valueFounded, value, StringComparison.Ordinal) == 0)
+                {
+                    listBox1.SetSelected(num, true);
+                    return;
+                }        
+
+            } while ((String.Compare(valueFounded, value, StringComparison.Ordinal) != 0));
+
+
+
         }
         
         private void button1_Click(object sender, EventArgs e)
